@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div  class="container" id="app"></div>
+<script type="text/babel">
+    const Movie = ({name, year, poster}) => {
+        return (
+            <div className="movie">
+                <img width="80" src={poster} alt={`The poster of the movie ${name}`}/>
+                <h1>{name}</h1>
+                <p className="year">Year of release: {year}</p>
+            </div>
+        );
+    };
+
+    const movies = (
+        <>
+            <Movie name ="Coraline" year ="2009" poster="https://m.media-amazon.com/images/I/81JPKdfJjdL._AC_UF894,1000_QL80_.jpg"/>
+            <Movie name ="Alice in Borderland" year ="2020" poster="https://i.ebayimg.com/images/g/SJUAAOSwR-RgBFzP/s-l1200.webp"/>
+            <Movie name ="Everything everywhere all at once" year ="2022" poster="https://i.etsystatic.com/18242346/r/il/7fb6f1/3898744406/il_fullxfull.3898744406_6wp7.jpg"/>
+        </>
+    );
+
+    ReactDOM.render(movies, document.getElementById('app'));
+</script>
+</body>
+</html>
